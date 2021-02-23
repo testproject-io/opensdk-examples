@@ -1,0 +1,8 @@
+﻿<RunSettings>
+  <RunConfiguration>
+    <EnvironmentVariables>
+      <!-- List of environment variables we want to set-->
+      <TP_DEV_TOKEN>YOUR_DEV_TOKEN</TP_DEV_TOKEN>
+    </EnvironmentVariables>
+  </RunConfiguration>
+</RunSettings>
