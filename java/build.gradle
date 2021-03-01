@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group 'io.testproject'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // TestProject OpenSDK
+    implementation 'io.testproject:java-sdk:0.65.4-RELEASE'
+
+    // JUnit4
+    testImplementation group: 'junit', name: 'junit', version: '4.13'
+
+    // JUnit5
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.1'
+
+    // Module "junit-jupiter-params" of JUnit 5.
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.5.1'
+
+    // TestNG Testing framework
+    testImplementation group: 'org.testng', name: 'testng', version: '7.1.0'
+}
+
+jar {
+    // Include compiled test classes and their sources
+    from sourceSets.test.output+sourceSets.test.allSource
+
+    // Collect and zip all classes from both test and runtime configurations
+    from { configurations.testRuntimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+}
