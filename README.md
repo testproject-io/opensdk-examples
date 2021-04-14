@@ -4,6 +4,7 @@ This repository contains examples of tests created using TestProject OpenSDK, us
 
 For a complete documentation of each SDK, please refer to the following repositories:
 
-* [Java](https://github.com/testproject-io/java-opensdk)
-* [Python](https://github.com/testproject-io/python-opensdk)
-* [C#](https://github.com/testproject-io/csharp-opensdk)
+- [Java](https://github.com/testproject-io/java-opensdk)
+- [Python](https://github.com/testproject-io/python-opensdk)
+- [C#](https://github.com/testproject-io/csharp-opensdk)
+- [JavaScript](https://github.com/testproject-io/javascript-opensdk)
