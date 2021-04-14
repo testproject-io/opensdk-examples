@@ -34,7 +34,7 @@
     "tests": "node_modules/.bin/_mocha --no-timeouts --exit dist/frameworks/mocha/*.spec.js"
   },
   "dependencies": {
-    "@tpio/javascript-opensdk": "/Users/vitaly/git/testproject/sdk/javascript-opensdk/dist/src",
+    "@tpio/javascript-opensdk": "^0.0.2",
     "selenium-webdriver": "^3.6.0"
   },
   "devDependencies": {
