@@ -5,15 +5,13 @@ plugins {
 group 'io.testproject'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
-
 repositories {
     mavenCentral()
 }
 
 dependencies {
     // TestProject OpenSDK
-    implementation 'io.testproject:java-sdk:0.65.4-RELEASE'
+    implementation 'io.testproject:java-sdk:1.2.3-RELEASE'
 
     // JUnit4
     testImplementation group: 'junit', name: 'junit', version: '4.13'
