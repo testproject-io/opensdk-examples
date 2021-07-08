@@ -24,6 +24,10 @@ dependencies {
 
     // TestNG Testing framework
     testImplementation group: 'org.testng', name: 'testng', version: '7.1.0'
+
+    // Cucumber
+    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '6.9.1'
+    testImplementation group: 'io.cucumber', name: 'cucumber-java', version: '6.9.1'
 }
 
 jar {
