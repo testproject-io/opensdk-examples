@@ -63,9 +63,13 @@ public class TypeRandomPhoneActionTest {
     @Test
     @DisplayName("Example Test")
     void basicTest() {
-
         // Create Action
         TypeRandomPhoneAction action = new TypeRandomPhoneAction();
+
+        // Prepare state
+        AndroidDriver driver = runner.getDriver();
+        driver.findElement(By.id("name")).sendKeys("John Smith");
+        driver.findElement(By.id("password")).sendKeys("12345");
 
         // Set action parameters
         action.countryCode = "1";

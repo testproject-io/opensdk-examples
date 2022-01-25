@@ -7,8 +7,6 @@ import io.testproject.sdk.internal.addons.interfaces.ElementAction;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-
-
 @AddonAction(platforms = Platform.Android, name = "Type random phone action")
 public class TypeRandomPhoneAction implements ElementAction<AndroidDriver<WebElement>> {
 
@@ -20,7 +18,6 @@ public class TypeRandomPhoneAction implements ElementAction<AndroidDriver<WebEle
 
     @Parameter(direction = ParameterDirection.OUTPUT)
     public String phone;
-
 
     @Override
     public boolean run(AndroidDriver androidDriver, By by) {

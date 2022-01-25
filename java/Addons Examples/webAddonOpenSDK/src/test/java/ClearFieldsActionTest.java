@@ -75,35 +75,34 @@ public class ClearFieldsActionTest {
         runAction(driver);
     }
 
-//
-//    @Test
-//    public void AndroidDriverChromeTest() throws InvalidTokenException, MalformedURLException, ObsoleteVersionException, AgentConnectException {
-//        AndroidDriver<WebElement> driver;
-//
-//        String DUT_UDID ="YOUR_TP_ANDROID_DUT_UDID";
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
-//        capabilities.setCapability(MobileCapabilityType.UDID, DUT_UDID);
-//        capabilities.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
-//        driver = new AndroidDriver<>(capabilities, "Examples");
-//        runAction(driver);
-//    }
-//
-//    @Test
-//    public void iOSSafariDriverTest() throws InvalidTokenException, MalformedURLException, ObsoleteVersionException, AgentConnectException {
-//        IOSDriver<WebElement> driver;
-//        String DUT_UDID = "YOUR_TP_IOS_DUT_UDID";
-//        String DUT_NAME = "YOUR_TP_IOS_DUT_NAME";
-//
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.IOS);
-//        capabilities.setCapability(MobileCapabilityType.UDID, DUT_UDID);
-//        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, DUT_NAME);
-//        capabilities.setCapability(CapabilityType.BROWSER_NAME, BrowserType.SAFARI);
-//
-//        driver = new IOSDriver<>(capabilities, "Examples");
-//        runAction(driver);
-//    }
+    @Test
+    public void AndroidDriverChromeTest() throws InvalidTokenException, MalformedURLException, ObsoleteVersionException, AgentConnectException {
+        AndroidDriver<WebElement> driver;
+
+        String DUT_UDID ="YOUR_TP_ANDROID_DUT_UDID";
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
+        capabilities.setCapability(MobileCapabilityType.UDID, DUT_UDID);
+        capabilities.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
+        driver = new AndroidDriver<>(capabilities, "Examples");
+        runAction(driver);
+    }
+
+    @Test
+    public void iOSSafariDriverTest() throws InvalidTokenException, MalformedURLException, ObsoleteVersionException, AgentConnectException {
+        IOSDriver<WebElement> driver;
+        String DUT_UDID = "YOUR_TP_IOS_DUT_UDID";
+        String DUT_NAME = "YOUR_TP_IOS_DUT_NAME";
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.IOS);
+        capabilities.setCapability(MobileCapabilityType.UDID, DUT_UDID);
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, DUT_NAME);
+        capabilities.setCapability(CapabilityType.BROWSER_NAME, BrowserType.SAFARI);
+
+        driver = new IOSDriver<>(capabilities, "Examples");
+        runAction(driver);
+    }
 
     private <D extends RemoteWebDriver> void runAction(final ActionRunner<D> runner) {
         ClearFieldsAction action = new ClearFieldsAction();
