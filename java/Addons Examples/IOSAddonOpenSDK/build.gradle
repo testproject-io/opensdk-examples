@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+}
+
+def TP_SDK = 'lib/testproject-java-sdk-0.0.1-SNAPSHOT.jar'
+sourceCompatibility = 1.8
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.5.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.1'
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.7.2")
+
+    compileOnly files("${TP_SDK}")
+    testCompileOnly files("${TP_SDK}")
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+
+jar {
+    assert file("${TP_SDK}").exists(): "TestProject SDK JAR file was not found, please update the TP_SDK variable"
+    archiveName "${rootProject.name}-${version}.jar"
+
+    // Build "uber" JAR, excluding compileOnly dependencies
+    from(
+            configurations.runtimeClasspath.collect {
+                it.isDirectory ? it : zipTree(it)
+            }
+    )
+    // Include the TP SDK version in the JAR
+    from(
+            configurations.compileClasspath.collect {
+                zipTree(it).matching {
+                    include 'testproject-sdk.properties'
+                }
+            }
+    )
+}
