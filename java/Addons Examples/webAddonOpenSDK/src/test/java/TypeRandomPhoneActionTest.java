@@ -20,7 +20,6 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariOptions;
-
 import java.io.IOException;
 import java.net.MalformedURLException;
 
@@ -46,7 +45,6 @@ public class TypeRandomPhoneActionTest {
         runAction(driver);
     }
 
-
     @Test
     public void edgeTest() throws InvalidTokenException, ObsoleteVersionException, AgentConnectException, IOException {
         EdgeDriver driver = new EdgeDriver(new EdgeOptions(), "Examples");
@@ -60,41 +58,41 @@ public class TypeRandomPhoneActionTest {
         driver.navigate().to("https://example.testproject.io/web/");
         runAction(driver);
     }
-    //==================================
-//    @Test
-//    public void AndroidDriverChromeTest() throws InvalidTokenException, MalformedURLException, ObsoleteVersionException, AgentConnectException {
-//
-//        String YOUR_DEVICE_UDID = "123d9743";
-//
-//        AndroidDriver<WebElement> driver;
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
-//        capabilities.setCapability(MobileCapabilityType.UDID, YOUR_DEVICE_UDID);
-//        capabilities.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
-//
-//        driver = new AndroidDriver<>(capabilities, "Examples");
-//        TypeRandomPhoneAction action = new TypeRandomPhoneAction();
-//        driver.addons().run(action, new By.ByXPath("//android.widget.EditText"));
-//    }
-//    //==================================
-//    @Test
-//    public void iOSSafariDriverTest() throws InvalidTokenException, MalformedURLException, ObsoleteVersionException, AgentConnectException {
-//        String DUT_UDID = "00008030-000C71643EA1802E";
-//        String DUT_NAME = "iPhone";
-//
-//        IOSDriver<WebElement> driver;
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//
-//        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.IOS);
-//        capabilities.setCapability(MobileCapabilityType.UDID, DUT_UDID);
-//        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, DUT_NAME);
-//        capabilities.setCapability(CapabilityType.BROWSER_NAME, BrowserType.SAFARI);
-//
-//        driver = new IOSDriver<>(capabilities, "Examples");
-//        TypeRandomPhoneAction action = new TypeRandomPhoneAction();
-//        driver.addons().run(action, new By.ByXPath("//android.widget.EditText"));
-//    }
-//
+
+    @Test
+    public void AndroidDriverChromeTest() throws InvalidTokenException, MalformedURLException, ObsoleteVersionException, AgentConnectException {
+
+        String YOUR_DEVICE_UDID = "YOUR_TP_ANDROID_DUT_UDID;
+
+        AndroidDriver<WebElement> driver;
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
+        capabilities.setCapability(MobileCapabilityType.UDID, YOUR_DEVICE_UDID);
+        capabilities.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
+
+        driver = new AndroidDriver<>(capabilities, "Examples");
+        TypeRandomPhoneAction action = new TypeRandomPhoneAction();
+        driver.addons().run(action, new By.ByXPath("//android.widget.EditText"));
+    }
+
+    @Test
+    public void iOSSafariDriverTest() throws InvalidTokenException, MalformedURLException, ObsoleteVersionException, AgentConnectException {
+        String DUT_UDID = "YOUR_TP_IOS_DUT_UDID";
+        String DUT_NAME = "YOUR_TP_IOS_DUT_NAME";
+
+        IOSDriver<WebElement> driver;
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.IOS);
+        capabilities.setCapability(MobileCapabilityType.UDID, DUT_UDID);
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, DUT_NAME);
+        capabilities.setCapability(CapabilityType.BROWSER_NAME, BrowserType.SAFARI);
+
+        driver = new IOSDriver<>(capabilities, "Examples");
+        TypeRandomPhoneAction action = new TypeRandomPhoneAction();
+        driver.addons().run(action, new By.ByXPath("//android.widget.EditText"));
+    }
+
     private <D extends RemoteWebDriver> void runAction(final ActionRunner<D> runner) {
         TypeRandomPhoneAction action = new TypeRandomPhoneAction();
         runner.addons().run(action, By.id("name"));

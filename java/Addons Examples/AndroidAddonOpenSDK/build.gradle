@@ -2,9 +2,7 @@ plugins {
     id 'java'
 }
 
-def TP_SDK = 'lib/testproject-java-sdk-0.0.1-SNAPSHOT.jar'
-sourceCompatibility = 1.8
-
+sourceCompatibility = 11
 
 group 'org.example'
 version '1.0-SNAPSHOT'
@@ -27,8 +25,6 @@ test {
 }
 
 jar {
-    assert file("${TP_SDK}").exists(): "TestProject SDK JAR file was not found, please update the TP_SDK variable"
-    archiveName "${rootProject.name}-${version}.jar"
 
     // Build "uber" JAR, excluding compileOnly dependencies
     from(
@@ -40,7 +36,7 @@ jar {
     from(
             configurations.compileClasspath.collect {
                 zipTree(it).matching {
-                    include 'testproject-sdk.properties'
+                    include 'testproject-opensdk.properties'
                 }
             }
     )
